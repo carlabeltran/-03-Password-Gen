@@ -1,0 +1,79 @@
+* {
+	box-sizing: border-box;
+}
+.navbar-brand{
+	
+}
+body{
+    background-image: url("../images/nice_snow.jpg");
+    font-family: sans-serif;
+}
+.container{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(51, 49, 49, 0.2);
+    padding: 20px;
+    width: 100%;
+}
+
+h2 {
+	margin: 10px 0 20px;
+	text-align: left;
+}
+
+input[type=checkbox] {
+	margin-right: 0;
+}
+
+#generatedPassword{
+    width: 100%;
+    border-style: dashed;
+    border-color: dimgrey;
+    display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	font-size: 16px;
+	letter-spacing: 1px;
+	padding: 12px 10px;
+	height: 200px;
+}
+.result-container #result {
+    word-wrap: break-word;
+    max-width: calc(100% - 70px);
+}
+
+#slider{
+    width: 100%;
+}
+
+#length{
+    display: inline-block;
+    width: 100px;
+}
+
+.button1 {
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 8px 12px;
+	background-color: rgba(199, 10, 10, 0.925);
+	border-radius: ;
+}
+
+.button2{
+
+}
+.setting {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 15px 0;
+}
+
+.previous_passwords {
+    margin-bottom: 20px;
+}
+

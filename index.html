@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Random Password Generator</title>
+    <!-- link for bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- link for css -->
+    <link rel="stylesheet" type="text/css" href="../passwordgenerator/assets/css/style.css">
+</head>
+<body>
+    <!-- navagation bar -->
+    <nav class="navbar navbar-light bg-light justify-content-center">
+        <span class="navbar-brand mb-0 h1">Password Generator</span>
+    </nav>
+    <!-- main container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12 mx-auto">
+                <div class="container-header">
+                    <h2>Generate a Password</h2>
+                    <hr />
+                </div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-sm-12 mx-auto">
+                <div class="settings">
+                    <input type="text" placeholder= "Your Secure Password" id="generatedPassword">
+                        <br />
+                </div>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-lg-8 col-sm-12 mx-auto">
+                    <label for="length">Password length:</label>
+                        <br />
+                            <input type="number" value="25" min="8" max="128" name="slider" id="length" />
+                                <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="setting">
+                        <label>Include uppercase letters</label> 
+                            <input type="checkbox" id="uppercase" checked />
+                    </div>
+                </div>
+                <div class="col-md-6 mx-auto">
+                    <div class="setting">
+                        <label>Include lowercase letters</label> 
+                            <input type="checkbox" id="lowercase" checked />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="setting">
+                        <label>Include numbers</label> 
+                            <input type="checkbox" id="numbers" checked />
+                    </div>
+                </div>
+                <div class="col-md-6 mx-auto">
+                    <div class="setting">
+                        <label>Include symbols</label> 
+                            <input type="checkbox" id="symbols" checked />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <button type="button" class= "button1 btn-x-lg" id="generate"  onclick="generatePassword()">Generate Password</button>
+                </div>
+                <div class="col-md-6 mx-auto">
+                    <button type="button" class= "button2 btn-x-lg" id="clipboard" onclick="clipboard()">Copy to Clipboard</button>
+                </div>
+            </div>
+    </div>
+            <div class="previous_passwords">
+                <b> Previously Generated Passwords</b>
+                <br />
+                <div id="prevPwd"></div>
+        </div>
+    <!-- link for javascript -->
+    <script src="/assets/java/script.js"></script>
+</body>
+</html>
