@@ -1,79 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 * {
 	box-sizing: border-box;
 }
-.navbar-brand{
-	
-}
-body{
+body {
     background-image: url("../images/nice_snow.jpg");
-    font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	font-family: 'Muli', sans-serif;
+	width: 100%;
+	margin: auto;
 }
-.container{
-    margin-top: 30px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    box-shadow: 0px 2px 10px rgba(51, 49, 49, 0.2);
-    padding: 20px;
-    width: 100%;
+#header {
+	text-align: center;
+	margin-top: 20px;
 }
-
-h2 {
-	margin: 10px 0 20px;
+h3 {
+	margin: 10px 0px 20px 0px;
 	text-align: left;
 }
-
-input[type=checkbox] {
-	margin-right: 0;
+.container {
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(51, 49, 49, 0.2);
+	padding: 20px 20px 20px 20px;
 }
-
-#generatedPassword{
-    width: 100%;
-    border-style: dashed;
-    border-color: dimgrey;
-    display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	position: relative;
-	font-size: 16px;
-	letter-spacing: 1px;
-	padding: 12px 10px;
-	height: 200px;
+.result-container {
+    height: 100px;
+	width: 100%;	
 }
+#display {
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 12px 10px;
+    height: 100px;
+	width: 100%;
+	border-style: dashed;
+	border-color: dimgrey;
+}	
 .result-container #result {
     word-wrap: break-word;
-    max-width: calc(100% - 70px);
+    max-width: calc(100% - 40px);
 }
-
-#slider{
-    width: 100%;
-}
-
-#length{
-    display: inline-block;
-    width: 100px;
-}
-
-.button1 {
-	border: none;
-	color: #fff;
-	cursor: pointer;
-	font-size: 16px;
-	padding: 8px 12px;
-	background-color: rgba(199, 10, 10, 0.925);
-	border-radius: ;
-}
-
-.button2{
-
-}
-.setting {
+#setting {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin: 15px 0;
 }
-
-.previous_passwords {
-    margin-bottom: 20px;
+input[type=checkbox] {
+	margin-right: 0;
 }
-
+#length {
+    display: inline-block;
+	width: 100px;
+	text-align: right;
+}
+.btn-danger {
+	background-color: rgba(199, 10, 10, 0.925);
+	border: none;
+	align-items: left;
+	justify-content: left;
+	display: flex;
+	color: #fff;
+	font-size: 16px;
+	padding: 15px 15px;
+	text-align: center;
+	display: block;
+}
+.btn-secondary {
+	background-color: rgba(211, 205, 205, 0.925);
+	border: none;
+	align-items: right;
+	justify-content: right;
+	display: flex;
+	color: #fff;
+	font-size: 16px;
+	padding: 15px 15px;
+	text-align: center;
+	display: block;
+}
+.previousPasswords {
+	box-sizing: content-box;
+	flex-direction: column;
+	align-content: left;
+	padding: 5px 0px 5px 50px;
+	height: 100%;
+}
+h4 {
+	font-weight: bolder;
+	font-size: large;	
+}
+#lastNums {
+	font-size: large;
+}
+@media only screen and (max-width:620px) {
+	/* For mobile phones: */
+	.nav, .container {
+	width: 100%;
+	}
+}

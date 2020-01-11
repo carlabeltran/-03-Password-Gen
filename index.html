@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Random Password Generator</title>
     <!-- link for bootstrap CDN -->
@@ -11,80 +11,93 @@
     <link rel="stylesheet" type="text/css" href="../passwordgenerator/assets/css/style.css">
 </head>
 <body>
-    <!-- navagation bar -->
-    <nav class="navbar navbar-light bg-light justify-content-center">
-        <span class="navbar-brand mb-0 h1">Password Generator</span>
+    <nav>
+        <h1 id="header">Password Generator</h1>
     </nav>
-    <!-- main container -->
+    <br />
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-sm-12 mx-auto">
-                <div class="container-header">
-                    <h2>Generate a Password</h2>
+            <div class="col-md-12 col-sm-12">
+                <div class="content">
+                    <h3>Generate a Password</h3>
                     <hr />
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 col-sm-12 mx-auto">
-                <div class="settings">
-                    <input type="text" placeholder= "Your Secure Password" id="generatedPassword">
-                        <br />
+            <div class="col-md-12 col-sm-12">
+                <div class="result">
+                    <input type="text" placeholder= "Your Secure Password" id="display" />
+                    <br />
+                    <div class="meterContainer">
+                        <div class="meter">
+                            <div class="good" style="width: 100%";>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-            <div class="row">
-                <div class="col-lg-8 col-sm-12 mx-auto">
-                    <label for="length">Password length:</label>
-                        <br />
-                            <input type="number" value="25" min="8" max="128" name="slider" id="length" />
-                                <br />
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <button  type="button" class="btn btn-danger btn-lg btn-block" id="generate" onclick="generatePassword()">Generate Password</button>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <button type="button" class="btn btn-secondary btn-lg btn-block" id="clipboard" onclick="copyClipboard()">Copy to Clipboard</button>
+            </div>
+        </div>
+        <br /> 
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="settings" id="setting">
+                    <label for="length">Password length</label>
+                    <input type="number" value="25" min="8" max="128" id="length" />
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <div class="setting">
-                        <label>Include uppercase letters</label> 
-                            <input type="checkbox" id="uppercase" checked />
-                    </div>
-                </div>
-                <div class="col-md-6 mx-auto">
-                    <div class="setting">
-                        <label>Include lowercase letters</label> 
-                            <input type="checkbox" id="lowercase" checked />
-                    </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="settings" id="setting">
+                    <label>Include uppercase letters</label> 
+                    <input type="checkbox" id="uppercase" checked />
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <div class="setting">
-                        <label>Include numbers</label> 
-                            <input type="checkbox" id="numbers" checked />
-                    </div>
-                </div>
-                <div class="col-md-6 mx-auto">
-                    <div class="setting">
-                        <label>Include symbols</label> 
-                            <input type="checkbox" id="symbols" checked />
-                    </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="settings" id="setting">
+                    <label>Include lowercase letters</label> 
+                    <input type="checkbox" id="lowercase" checked />
                 </div>
             </div>
-            <br />
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <button type="button" class= "button1 btn-x-lg" id="generate"  onclick="generatePassword()">Generate Password</button>
-                </div>
-                <div class="col-md-6 mx-auto">
-                    <button type="button" class= "button2 btn-x-lg" id="clipboard" onclick="clipboard()">Copy to Clipboard</button>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="settings" id="setting">
+                    <label>Include numbers</label> 
+                    <input type="checkbox" id="numbers" checked />
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="settings" id="setting">
+                    <label>Include symbols</label> 
+                    <input type="checkbox" id="symbols" checked />
+                </div>
+            </div>
+        </div> 
     </div>
-            <div class="previous_passwords">
-                <b> Previously Generated Passwords</b>
-                <br />
-                <div id="prevPwd"></div>
+    <br />
+        <div class="previousPasswords">
+            <div class="row row-centered pos">
+                <div class="col-lg-12 col-x-sm-12 col-centered"> 
+                    <h4>Previous Generated Passwords</h4>
+                        <div id="lastNums"></div>
+                </div>
+            </div>
         </div>
-    <!-- link for javascript -->
-    <script src="/assets/java/script.js"></script>
-</body>
+        <!-- link for javascript -->
+        <script type="text/javascript" src="assets/java/script.js"></script>
+    </body>
 </html>
