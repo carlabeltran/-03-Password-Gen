@@ -3,7 +3,7 @@
 	box-sizing: border-box;
 }
 body {
-    background-image: url("../images/nice_snow.jpg");
+    background-image: url(../images/nicesnow.jpg);
 	display: flex;
 	flex-direction: column;
 	align-content: center;

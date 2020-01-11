@@ -17,6 +17,7 @@ const clipboard = document.getElementById('clipboard');
 console.log('clipboard');
 const previousPasswords = document.getElementById('lastNums');
 console.log('lastNums');
+//object
 const randomFunc = {
     lower: getRandomLower,
     upper: getRandomUpper,
@@ -27,6 +28,16 @@ console.log(randomFunc.lower);
 console.log(randomFunc.upper);
 console.log(randomFunc.number);
 console.log(randomFunc.symbol);
+
+clipboard.addEventListener('click', () => {
+
+
+function copyPassword() {
+    document.getElementById("display").select();
+    document.execCommand("copyClipboard");
+    alert("Password copied to clipboard!");
+}
+
 //generate event listener
 generate.addEventListener('click', () => {
 	const length = +lengthEl.value;
@@ -93,9 +104,3 @@ function getRandomSymbol() {
     return symbols[Math.floor(Math.random() * symbols.length)];
 }
 console.log(getRandomSymbol());
-
-function copyPassword() {
-    document.getElementById("display").select();
-    document.execCommand("copyClipboard");
-    alert("Password copied to clipboard!");
-}
