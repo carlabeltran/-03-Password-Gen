@@ -30,8 +30,9 @@ The user will choose from the following password criteria:
     -The random password generator application gives the user the option to click a button to copy the password to their clipboard.
 
 ## Installation 
-No installation required. Just visit the link.
-(The URL of the deployed application)
+No installation required. Just visit the link below.
+
+https://carlabeltran.github.io/-03-Password-Gen/
 
 ## Usage
 Random password generator user interface.
@@ -41,7 +42,7 @@ Input password length (min 8 max 128)
 ![Image description](link-to-image)
 
 View previously generated passwords below
-![Image description](previous)
+![Image description](ink-to-image)
 
 ## Credits
 

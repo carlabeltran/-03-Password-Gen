@@ -121,13 +121,13 @@ function generatePassword(lower, upper, number, symbol, length) {
 			
 			//appending empty generated password string
 			generatedPassword += randomFunc[funcName]();
-		});
-	}
+	});
+}
 	//This validates the length and password length match
 	const finalPassword = generatedPassword.slice(0, length);	
 	//console.log(generatedPassword.slice(0, length));
 	//console.log(generatedPasword);
-	
+
 	//display generated password
 	document.getElementById('display').value = finalPassword;
 
