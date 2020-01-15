@@ -1,108 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="professionalportfolio"/>
-    <meta name="author" content="carla beltran"/> 
-    <meta http-equiv="X-UA-Compatible" content="ie=Edge">
-    <!-- Responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Random Password Generator</title>
-    <!-- link for css -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <!-- link for google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
-    <!-- link for bootstrap CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
-    <nav>
-        <h1 id="header">Password Generator</h1>
-    </nav>
-    <br />
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
+    <head>
+        <!-- meta tags -->
+        <meta charset="UTF-8">
+        <meta name="description" content="random password generator"/>
+        <meta name="author" content="carla beltran"/> 
+        <meta http-equiv="X-UA-Compatible" content="ie=Edge" />
+        <!-- Responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- webpage tab title -->
+        <title>Random Password Generator</title>
+    
+        <!-- link for css -->
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+        <!-- link for google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    
+        <!-- link for bootstrap CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+        <body>
+            <div class="container">
+                <header>
+                    <h1 id="header">Random Password Generator</h1>
+                </header>
                 <div class="content">
-                    <h3>Generate a Password</h3>
-                    <hr />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="result">
-                    <input type="text" placeholder= "Your Secure Password" id="display" />
-                    <br />
-                    <div class="meterContainer">
-                        <div class="meter">
-                            <div class="good" style="width: 100%";>
-                            </div>
+                    <div class="content-header">
+                        <h3>Generate a Password</h3>
+                        <hr />
+                    </div>
+                    <div class="content-body">
+                        <div class="result">
+                            <textarea readonly name="finalpassword" type="text" placeholder= "Your Secure Password" id="display"></textarea>
                         </div>
                     </div>
+                    <!-- generate and copy to clipboard buttons -->
+                    <div class="content-footer">
+                        <button type="submit" class="btn" id="generate" click="generatePassword()">Generate Password</button>
+                        <button type="submit" class="btn" id="clipboard" click="copyPassword()">Copy to Clipboard</button>
+                    </div>
+                    <br />
+                    <!-- length -->
+                    <label for="length">Password length:</label>
+                    <div class="def-number-input number-input safari_only">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                    <input class="quantity" min="8" max="128" name="quantity" value="0" type="number" id="length" oninput="" required/>
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                    </div>
+                    <!-- uppercase checkbox 1 -->
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="uppercase" oninput="" checked />
+                        <label class="custom-control-label" for="uppercase">Include uppercase letters</label>
+                    </div>
+                    <br />
+                    <!-- lowercase checkbox 2 --->
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="lowercase" oninput="" checked />
+                        <label class="custom-control-label" for="lowercase">Include lowercase letters</label>
+                    </div>
+                    <br />
+                    <!-- lowercase checkbox 3 --->
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="numbers" oninput="" checked />
+                        <label class="custom-control-label" for="numbers">Include numbers</label>
+                    </div>
+                    <br />
+                    <!-- lowercase checkbox 4--->
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="symbols" oninput="" checked />
+                        <label class="custom-control-label" for="symbols">Include symbols</label>
+                    </div>
+                </div>
+                <div class="container-footer">
+                    <div class="previousPasswords">
+                        <br />
+                        <h5>Previously Generated Passwords</h5>
+                        <br />
+                    </div>
+                    <div id="lastNums"></div>
+                    <br />
                 </div>
             </div>
-        </div>
-        <hr />
-        <div class="row">
-            <div class="col-md-6 col-sm-12">
-                <button  type="button" class="btn btn-danger btn-lg btn-block" id="generate" onclick="generatePassword()">Generate Password</button>
-            </div>
-            <div class="col-md-6 col-sm-12">
-                <button type="button" class="btn btn-secondary btn-lg btn-block" id="clipboard" onclick="copyClipboard()">Copy to Clipboard</button>
-            </div>
-        </div>
-        <br /> 
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="settings" id="setting">
-                    <label for="length">Password length</label>
-                    <input type="number" value="25" min="8" max="128" id="length" />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="settings" id="setting">
-                    <label>Include uppercase letters</label> 
-                    <input type="checkbox" id="uppercase" checked />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="settings" id="setting">
-                    <label>Include lowercase letters</label> 
-                    <input type="checkbox" id="lowercase" checked />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="settings" id="setting">
-                    <label>Include numbers</label> 
-                    <input type="checkbox" id="numbers" checked />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div class="settings" id="setting">
-                    <label>Include symbols</label> 
-                    <input type="checkbox" id="symbols" checked />
-                </div>
-            </div>
-        </div> 
-    </div>
-    <br />
-        <div class="previousPasswords">
-            <div class="row row-centered pos">
-                <div class="col-lg-12 col-x-sm-12 col-centered"> 
-                    <h4>Previous Generated Passwords</h4>
-                        <div id="lastNums"></div>
-                </div>
-            </div>
-        </div>
         <!-- link for javascript -->
         <script type="text/javascript" src="../passwordgenerator/assets/javascript/script.js"></script>
     </body>
